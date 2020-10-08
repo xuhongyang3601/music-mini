@@ -1,0 +1,6 @@
+function getTime(time){
+  var  m = Math.floor(time/60) < 10 ? '0' + Math.floor(time/60) : Math.floor(time/60);
+  var  s = Math.ceil(time%60) < 10 ? '0' + Math.ceil(time%60) :Math.ceil(time%60);
+  return m+':'+s
+}
+module.exports={getTime:getTime}

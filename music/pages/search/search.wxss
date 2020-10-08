@@ -1,0 +1,107 @@
+#container{
+  padding: 10px;
+  background-color: #fff;
+}
+.search{
+  height: 80rpx;
+  background-color: #fff;
+  color: #555;
+  border-radius: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.result{
+  margin-top: 30rpx;
+}
+.search>image{
+  width: 64rpx;
+  vertical-align: middle;
+  margin: 0 20rpx;
+}
+.title{
+  color: #507DAF;
+  margin-left: 20rpx;
+}
+.song{
+  display: flex;
+  margin: 60rpx 0;
+  align-items: center;
+}
+.song image{
+  margin-bottom: -10rpx;
+  width: 50rpx;
+}
+.detail{
+  font-size: 35rpx;
+  margin-left: 20rpx;
+}
+.nav{
+  background-color: #eeeeff;
+  display: inline-block;
+  border-radius: 20px;
+  height: 25px;
+  line-height: 25px;
+  padding: 5px;
+  font-size: 15px;
+  color: #555;
+}
+.oneclamp{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.new-song{
+  margin-top: 60rpx;
+}
+.new-song>view:first-child{
+  margin: 20rpx 0 20rpx 20rpx;
+}
+.list{
+  display: flex;
+}
+.list+.list{
+  margin-top: 40rpx;
+}
+.list>view:first-child{
+  flex: 0 0 10%;
+  text-align: center;
+  line-height: 82rpx;
+  margin-right: 20rpx;
+}
+.list>view:first-child+navigator{
+  flex: 0 0 90%;
+}
+.list:nth-child(2)>view:first-child,
+.list:nth-child(3)>view:first-child,
+.list:nth-child(4)>view:first-child{
+  color: red;
+}
+.list>view:first-child,
+.name{
+  font-size: 40rpx;
+}
+.artist{
+  color: #aaa;
+}
+.history{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.history>view:first-child{
+  flex: 0 0 100%;
+  margin: 20rpx 0;
+}
+.history>view:not(:first-child){
+  padding: 10rpx;
+  border-radius: 100rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.delete{
+  width: 48rpx;
+  float: right;
+}

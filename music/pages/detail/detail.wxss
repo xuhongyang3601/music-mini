@@ -1,0 +1,74 @@
+/* pages/detail/detail.wxss */
+#container{
+  width: 99vw;
+  height: 100vh;
+  padding: 20rpx;
+}
+.search{
+  width: 100vw;
+  height: 80rpx;
+  background-color: #F5F5F5;
+  color: #555;
+  border-radius: 100rpx;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  left: 0;
+}
+.oneclamp{
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.search>image{
+  width: 64rpx;
+  vertical-align: middle;
+  margin: 0 20rpx ;
+}
+.icon>image{
+  width: 52rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+.songs{
+  width: 95%;
+}
+.song{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #aaa;
+  padding: 20rpx 0;
+}
+.song+.song{
+  margin-top: 20rpx;
+}
+.name{
+  font-size: 35rpx;
+  color: #08a5ee;
+  font-weight: 200;
+}
+.artist{
+  padding-top: 10px;
+  font-size: 28rpx;
+  color: #aaa;
+}
+.research{
+  display: flex;
+  margin: 60rpx 0;
+  align-items: center;
+}
+.research image{
+  margin-bottom: -10rpx;
+  width: 50rpx;
+}
+.research{
+  font-size: 35rpx;
+  margin-left: 20rpx;
+}
+.title{
+  color: #507DAF;
+  margin-left: 20rpx;
+}

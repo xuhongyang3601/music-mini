@@ -1,0 +1,34 @@
+<view id="container">
+  <view class="header">
+    <view>
+      <image src="{{imgs[index]}}" ></image>
+    </view>
+    <view>
+      {{name}}音乐榜单
+    </view>
+  </view>
+  <view class="songs">
+    <view  bindtap="playAll">
+      <image src="/img/icon/playAll.png" mode="widthFix"></image>
+      播放全部
+    </view>
+    <view  wx:for="{{songs}}" wx:key="index">
+      <navigator class="song" url="/pages/play/play?id={{item.id}}">
+        <view>
+          {{index+1}}
+        </view>
+        <view>
+          <view class="ar">
+            {{item.name}}
+          </view>
+          <view class="al">
+            {{item.ar[0].name}}-{{item.al.name}}
+          </view>
+        </view>
+        <view>
+          <image src="/img/icon/play.png" mode="widthFix"></image>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<view id="container">
+  <view class="header">
+    <view class="search" bindtap="goSearch">
+      <image src="/img/icon/search.png" mode="widthFix"></image>
+      搜索歌曲
+    </view>
+  </view>
+  <view wx:if="list">
+    <view class="title">
+      <text>热门歌单</text>
+      <image src="/img/icon/music.png" mode="widthFix"></image>
+    </view>
+    <view wx:for="{{list}}" wx:key="index"  hover-class="music_click" hover-stay-time="500">
+      <navigator class="musics" url="/pages/list/list?id={{item.id}}&name={{item.name}}&index={{index}}" bindtap="changePage">
+        <view class="img">
+          <image src="{{imgs[index]}}"></image>
+        </view>
+        <view class="music">
+          <view>{{item.name}}</view>
+          <view wx:for="{{item.tarcks}}" wx:key="index">
+            {{index+1}}.{{item.name}}-{{item.ar[0].name}}
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

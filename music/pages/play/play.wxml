@@ -1,0 +1,19 @@
+<!--pages/play/play.wxml-->
+<wxs src="./getTime.wxs" module="string"></wxs>
+<view wx:if="{{lyric}}" class="lyric">
+  <image src="{{pic}}" class="pic rotate pause{{begin?'disabled':''}}" bindtap="play"></image>
+  <image src="/img/icon/start.png" class="begin" bindtap="play" wx:if="{{begin}}"></image>
+  <image src="/img/icon/stop.png" class="stop" bindtap="play" wx:else></image>
+  <view style="height:150px;overflow:hidden" class="container">
+    <view style="margin-top:{{-i*42}}rpx" class="transition">
+      <view wx:for="{{lyric}}" wx:key="index" style="text-align:center" class="active{{ item.time <= time && time < lyric[index+1].time ? '' : 'disabled'}}">
+    {{item.text}}
+      </view>
+    </view>
+  </view>
+  <view>
+    <slider  min="0" step="1" block-size="20"  value="{{time}}" max="{{duration}}" bindchanging="seek"></slider>
+    <view class="left">{{string.getTime(time)}}</view>
+    <view class="right"> {{string.getTime(duration)}}</view>
+  </view>
+</view>

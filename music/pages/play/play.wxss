@@ -1,0 +1,94 @@
+/* pages/play/play.wxss */
+.lyric{
+  background: linear-gradient(#A0A5D6,#C5CFCE);  
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+slider{
+  margin-bottom: 0;
+}
+.active{
+  font-size: 40rpx;
+  padding:5px 0;
+  color: green;
+}
+.normal{
+  color: #000;
+  font-size: 30rpx;
+}
+.container>view:first-child{
+  margin-top: 100rpx;
+}
+.transition{
+  transition: margin 1s linear;
+}
+.pic{
+  border-radius: 50%;
+  width: 400rpx;
+  height: 400rpx;
+  overflow: hidden;
+  margin: 50rpx auto;
+  margin-left: 100px;
+  position: relative;
+  top: 0;
+  right: 0;
+}
+.play{
+  margin-top: 20rpx;
+  width: 50px;
+  margin-bottom: 20rpx;
+}
+.begin,.stop{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 270rpx;
+  left: 350rpx;
+}
+
+/* .bottom{
+  height: 100rpx;
+} */
+@keyframes rotate{
+  0%{
+    border-radius: 50%;
+    width: 500rpx;
+    height: 500rpx;
+    overflow: hidden;
+    margin-left: 150rpx;
+    transform: rotateZ(0);
+  }
+  100%{
+    border-radius: 50%;
+    width: 500rpx;
+    height: 500rpx;
+    overflow: hidden;
+    margin-left: 150rpx;
+    transform: rotateZ(360deg);
+  }
+}
+  .rotate{
+  animation: rotate 20s linear infinite;
+  }
+  .pause{
+  animation-play-state: paused;
+  }
+  slider{
+    /* position: relative; */
+    margin-top: -50rpx;
+    /* top: 5%; */
+    /* right: 0; */
+  }
+  .left{
+    position: absolute;
+    bottom:  10rpx;
+    left: 35rpx;
+  }
+  .right{
+    position: absolute;
+    bottom: 10rpx;
+    right: 40rpx;
+  }
+ 

@@ -1,0 +1,44 @@
+<!--pages/detail/detail.wxml-->
+<scroll-view scroll-y="true" bindscrolltolower="lower" lower-threshold="20" id="container">
+  <!-- 顶部搜索栏开始 -->
+  <view class="search">
+    <image src="/img/icon/search.png" mode="widthFix"></image>
+    <input type="text" placeholder="搜索歌曲" bindfocus="search" value="{{kw}}" bindinput="research"/>
+  </view>
+  <!-- 顶部搜索栏结束 -->
+  <view style="height:80rpx"></view>
+  <!-- 搜索结果展示开始 -->
+  <view wx:if="{{canSearch}}" style=" padding-top: 50rpx;">
+    <view class="title">
+        搜索"{{kw}}"
+    </view>
+    <view wx:for="{{research}}" wx:key="index">
+      <navigator class="research" url="/pages/detail/detail?name={{item.name}}">
+        <view>
+          <image src="/img/icon/search.png" mode="widthFix"></image>
+        </view>
+        <view class="detail oneclamp">
+          {{item.name}}-{{item.artists[0].name}}
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="songs" wx:else>
+    <view  wx:for="{{songs}}" wx:key="index">
+      <navigator class="song" url="/pages/play/play?id={{item.id}}">
+        <view>
+          <view class="name oneclamp">
+            {{item.name}}
+          </view>
+          <view class="artist oneclamp">
+            {{item.artists[0].name}}
+          </view>
+        </view>
+        <view class="icon">
+          <image src="/img/icon/play.png" mode="widthFix"></image>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 搜索结果展示结束 -->
+</scroll-view>

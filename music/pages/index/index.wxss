@@ -1,0 +1,69 @@
+#container{
+  padding: 10px;
+  background-color: #F5F5F5;
+}
+.search{
+  height: 80rpx;
+  background-color: #fff;
+  color: #aaa;
+  border-radius: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.title{
+  margin: 20rpx 0;
+  padding: 10rpx;
+}
+.title>image{
+  width: 32rpx;
+  margin-bottom: -4rpx;
+  margin-left: 10rpx;
+}
+.search>image{
+  width: 64rpx;
+  vertical-align: middle;
+  margin: 0 20rpx;
+}
+.musics{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30rpx;
+  background-color: #fff;
+  padding: 10rpx 20rpx;
+}
+.music_click{
+  box-shadow: 0 0 40rpx 0 #aaa;
+}
+.music{
+  flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20rpx;
+}
+.music>view:first-child{
+  margin-left: 20rpx;
+  font-size: 40rpx;
+  line-height: 74rpx;
+}
+.music>view:not(:first-child){
+  height: 38rpx;
+  margin: 4rpx 12rpx 0;
+  font: 26rpx/38rpx PingFangSC-regular;
+  color: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.img{
+  flex: 0 0 30%;
+}
+.img>image{
+  width: 100%;
+  height: 106px;
+  border-radius: 16rpx;
+  border: 1px solid #aaa;
+}

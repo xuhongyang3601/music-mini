@@ -1,0 +1,54 @@
+<!--pages/search/search.wxml-->
+<view id="container">
+  <!-- 顶部搜索框开始 -->
+  <view class="search">
+    <image src="/img/icon/search.png" mode="widthFix" ></image>
+    <input type="text" placeholder="搜索歌曲" bindinput="search"/>
+  </view>
+<!-- 顶部搜索框结束 -->
+  <!-- 搜索历史记录开始 -->
+  <view wx:if="{{history.length}}" class="history">
+    <view>
+      历史记录
+      <image src="/img/icon/delete.png" mode="widthFix" class="delete" bindtap="delete"></image>
+    </view>
+    <view wx:for="{{history}}" wx:key="index">
+      <navigator  class="nav" url="/pages/detail/detail?name={{item}}">
+        {{item}}
+      </navigator>
+    </view>
+  </view>
+  <!-- 搜索历史记录结束 -->
+<!-- 搜索结果展示开始 -->
+    <view wx:if="{{songs.length}}" class="result">
+      <view class="title">
+        搜索"{{kw}}"
+      </view>
+      <view wx:for="{{songs}}" wx:key="index">
+        <navigator class="song" url="/pages/detail/detail?name={{item.name}}">
+          <view>
+            <image src="/img/icon/search.png" mode="widthFix"></image>
+          </view>
+          <view class="detail oneclamp">
+            {{item.name}}-{{item.artists[0].name}}
+          </view>
+        </navigator>
+      </view>
+    </view>
+<!-- 搜索结果展示结束 -->
+<!-- 新歌推荐列表开始 -->
+    <view wx:else class="new-song">
+      <view>新歌榜</view>
+      <view class="list" wx:for="{{list}}" wx:key="index">
+        <view>{{index+1}}</view>
+        <navigator url="/pages/detail/detail?name={{item.name}}">
+          <view>
+            <view class="oneclamp name" >{{item.name}}</view>
+            <view class="oneclamp artist" >{{item.song.artists[0].name}}</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+<!-- 新歌推荐列表结束 -->
+</view>
+
